@@ -7,13 +7,13 @@ export const addFlight = (departureLoc, arrivalLoc, flightNum) => ({
   flightNum
 })
 
-export const setVisibilityFilter = filter => ({
-  type: 'SET_VISIBILITY_FILTER',
+export const setFlightsVisibilityFilter = filter => ({
+  type: 'SET_FLIGHTS_VISIBILITY_FILTER',
   filter
 })
 
-export const VisibilityFilters = {
+export const FlightsVisibilityFilters = {
   SHOW_ALL: 'SHOW_ALL',
   SHOW_PAST: 'SHOW_PAST',
-  SHOW_FUTURE: 'SHOW_ACTIVE'
+  SHOW_FUTURE: 'SHOW_FUTURE'
 }
