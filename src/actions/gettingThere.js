@@ -12,8 +12,3 @@ export const setFlightsVisibilityFilter = filter => ({
   filter
 })
 
-export const FlightsVisibilityFilters = {
-  SHOW_ALL: 'SHOW_ALL',
-  SHOW_PAST: 'SHOW_PAST',
-  SHOW_FUTURE: 'SHOW_FUTURE'
-}
