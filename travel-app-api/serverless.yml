@@ -26,9 +26,11 @@ iamRoleStatements:
     Resource: "arn:aws:dynamodb:us-west-2:*:*"
 
 functions:
-  hello:
-    handler: handler.hello
+  create:
+    handler: create.main
     events:
       - http:
-          path: hello
-          method: get
+          path: flights
+          method: post
+          cors: true
+          authorizer: aws_iam
