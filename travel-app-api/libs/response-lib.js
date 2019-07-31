@@ -1,12 +1,13 @@
+/*eslint-disable*/
 export function success(body) {
     return buildResponse(200, body);
-  }
+}
   
-  export function failure(body) {
+export function failure(body) {
     return buildResponse(500, body);
-  }
+}
   
-  function buildResponse(statusCode, body) {
+function buildResponse(statusCode, body) {
     return {
       statusCode: statusCode,
       headers: {
@@ -15,4 +16,5 @@ export function success(body) {
       },
       body: JSON.stringify(body)
     };
-  }
+}
+/*eslint-enable*/

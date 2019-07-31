@@ -34,7 +34,7 @@ functions:
           method: post
           cors: true
           authorizer: aws_iam
-    get:
+  get:
     handler: get.main
     events:
       - http:
