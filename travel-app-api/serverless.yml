@@ -46,7 +46,7 @@ functions:
     handler: list.main
     events:
       - http:
-          path: notes
+          path: flights
           method: get
           cors: true
           authorizer: aws_iam
@@ -56,5 +56,13 @@ functions:
       - http:
           path: flights/{id}
           method: put
+          cors: true
+          authorizer: aws_iam
+  delete:
+    handler: delete.main
+    events:
+      - http:
+          path: flights/{id}
+          method: delete
           cors: true
           authorizer: aws_iam
