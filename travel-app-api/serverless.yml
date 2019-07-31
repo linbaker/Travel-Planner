@@ -1,25 +1,17 @@
-# NOTE: update this with your service name
 service: travel-app-api
 
-# Create an optimized package for our functions 
 package:
   individually: true
 
 plugins:
-  - serverless-bundle # Package our functions with Webpack
+  - serverless-bundle
   - serverless-offline
 
 provider:
   name: aws
   runtime: nodejs8.10
-  stage: dev
-  region: us-east-1
-  # To load environment variables externally
-  # rename env.example to env.yml and uncomment
-  # the following line. Also, make sure to not
-  # commit your env.yml.
-  #
-  #environment: ${file(env.yml):${self:provider.stage}}
+  stage: prod
+  region: us-west-2
 
 functions:
   hello:
