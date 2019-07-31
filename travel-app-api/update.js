@@ -7,7 +7,7 @@ export async function main(event, context) {
     TableName: "flights",
     Key: {
       userId: event.requestContext.identity.cognitoIdentityId,
-      nflightId: event.pathParameters.id
+      flightId: event.pathParameters.id
     },
     UpdateExpression: "SET content = :content, attachment = :attachment",
     ExpressionAttributeValues: {
