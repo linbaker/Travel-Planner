@@ -11,6 +11,8 @@ import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import FlightIcon from '@material-ui/icons/Flight';
+import PersonAddIcon from '@material-ui/icons/PersonAdd';
+import PersonIcon from '@material-ui/icons/Person';
 
 const useStyles = makeStyles({
   list: {
@@ -43,12 +45,19 @@ export default function SlideDrawerNav() {
       onKeyDown={toggleDrawer(side, false)}
     >
       <List>
-        {[<Link to="/">Flights</Link>,'Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <FlightIcon /> : <MailIcon />}</ListItemIcon>
-            <ListItemText primary={text} />
+        
+          <ListItem button key='Login'>
+            <ListItemIcon><PersonIcon /></ListItemIcon>
+            <ListItemText primary='Login' />
           </ListItem>
-        ))}
+          <ListItem button key='SignUp'>
+            <ListItemIcon><PersonAddIcon /></ListItemIcon>
+            <ListItemText primary='SignUp' />
+          </ListItem>
+          <ListItem button key='Flights'>
+            <ListItemIcon><FlightIcon /></ListItemIcon>
+            <ListItemText primary='Flights' />
+          </ListItem>
       </List>
       <Divider />
       <List>
