@@ -45,16 +45,15 @@ export default function SlideDrawerNav() {
       onKeyDown={toggleDrawer(side, false)}
     >
       <List>
-        
-          <ListItem button key='Login'>
+          <ListItem button component={Link} to="/login">
             <ListItemIcon><PersonIcon /></ListItemIcon>
             <ListItemText primary='Login' />
           </ListItem>
-          <ListItem button key='SignUp'>
+          <ListItem button component={Link} to="/signup">
             <ListItemIcon><PersonAddIcon /></ListItemIcon>
             <ListItemText primary='SignUp' />
           </ListItem>
-          <ListItem button key='Flights'>
+          <ListItem button component={Link} to="/flights">
             <ListItemIcon><FlightIcon /></ListItemIcon>
             <ListItemText primary='Flights' />
           </ListItem>
