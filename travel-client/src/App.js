@@ -28,7 +28,7 @@ class App extends Component {
 
     return (
       <div className="App container">
-        <SlideDrawerNav />
+        <SlideDrawerNav isAuthenticated={this.state.isAuthenticated} onLogout={this.handleLogout}/>
         <Routes childProps={childProps} />
       </div>
     );

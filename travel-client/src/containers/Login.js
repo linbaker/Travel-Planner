@@ -1,67 +1,61 @@
-import React from 'react';
-import Button from '@material-ui/core/Button';
-import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
-import "./Login.css";
+import React, { Component } from "react";
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
+import Bootstrap from "react-bootstrap";
 
-export default class SimpleFormExample extends React.Component {
-    state = {
-        formData: {
-            email: '',
-            password: '',
-        },
-        submitted: false,
-    }
+export default class Login extends Component {
+  constructor(props) {
+    super(props);
 
-    handleChange = (event) => {
-        const { formData } = this.state;
-        formData[event.target.name] = event.target.value;
-        this.setState({ formData });
-    }
+    this.state = {
+      email: "",
+      password: ""
+    };
+  }
 
-    handleSubmit = () => {
-        this.setState({ submitted: true }, () => {
-            setTimeout(() => this.setState({ submitted: false }), 5000);
-        });
-    }
+  validateForm() {
+    return this.state.email.length > 0 && this.state.password.length > 0;
+  }
 
-    render() {
-        const { formData, submitted } = this.state;
-        return (
-            <ValidatorForm
-                ref="form"
-                onSubmit={this.handleSubmit}
-            >
-                <h2>Simple form</h2>
-                <TextValidator
-                    label="Email"
-                    onChange={this.handleChange}
-                    name="email"
-                    value={formData.email}
-                    validators={['required', 'isEmail']}
-                    errorMessages={['this field is required', 'email is not valid']}
-                />
-                <br />
-                <TextValidator
-                    label="Password"
-                    onChange={this.handleChange}
-                    name="password"
-                    value={formData.password}
-                    validators={['required']}
-                    errorMessages={['this field is required']}
-                />
-                <br />
-                <Button
-                    color="primary"
-                    variant="contained"
-                    type="submit"
-                    disabled={submitted}
-                >
-                    {
-                        (submitted && 'Your form is submitted!')
-                        || (!submitted && 'Submit')
-                    }
-                </Button>
-            </ValidatorForm>
-        );
-    }
+  handleChange = event => {
+    this.setState({
+      [event.target.id]: event.target.value
+    });
+  }
+
+  handleSubmit = event => {
+    event.preventDefault();
+  }
+
+  render() {
+    return (
+      <div className="Login">
+        <Form onSubmit={this.handleSubmit}>
+          <Form.Group controlId="email" bsSize="large">
+            <Form.Control
+              autoFocus
+              type="email"
+              value={this.state.email}
+              onChange={this.handleChange}
+            />
+          </Form.Group>
+          <Form.Group controlId="password" bsSize="large">
+            <Form.Control
+              value={this.state.password}
+              onChange={this.handleChange}
+              type="password"
+            />
+          </Form.Group>
+          <Button
+            block
+            bsSize="large"
+            disabled={!this.validateForm()}
+            type="submit"
+          >
+            Login
+          </Button>
+        </Form>
+      </div>
+    );
+  }
 }
