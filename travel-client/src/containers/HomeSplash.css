@@ -1,0 +1,13 @@
+.HomeSplash .lander {
+    padding: 80px 0;
+    text-align: center;
+  }
+  
+  .HomeSplash .lander h1 {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 600;
+  }
+  
+  .HomeSplash .lander p {
+    color: #999;
+  }
