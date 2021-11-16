@@ -38,7 +38,7 @@
     ]
   },
   "devDependencies": {
-    "aws-sdk": "^2.503.0",
+    "aws-sdk": "^2.814.0",
     "babel-jest": "^24.7.1",
     "jest": "^24.7.1"
   }
